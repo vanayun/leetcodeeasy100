@@ -2,8 +2,7 @@
  * @param {string} s
  * @return {number}
  */
-var romanToInt = function(s) {
-    
+var romanToInt = function (s) {
   let answer = 0;
   const roman = new Map();
   roman.set('I', 1);
@@ -13,16 +12,16 @@ var romanToInt = function(s) {
   roman.set('C', 100);
   roman.set('D', 500);
   roman.set('M', 1000);
-  
-  for(let i=0; i<s.split('').length; i++) { 
-    if(roman.get(s[i]) < roman.get(s[i+1])) {
-      answer += roman.get(s[i+1]) - roman.get(s[i]);
+
+  for (let i = 0; i < s.split('').length; i++) {
+    if (roman.get(s[i]) < roman.get(s[i + 1])) {
+      answer += roman.get(s[i + 1]) - roman.get(s[i]);
       i++;
     } else {
-      answer+=roman.get(s[i]);
+      answer += roman.get(s[i]);
     }
   }
   return answer;
 };
 
-console.log(romanToInt('CXL'));
+console.log(romanToInt('IVV'));
